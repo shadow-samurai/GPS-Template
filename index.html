@@ -1,0 +1,202 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0038)https://s1.gps-server.net/tracking.php -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+		<meta name="robots" content="noindex">
+		<meta name="googlebot" content="noindex">
+        <title>GPS SERVER</title>
+	
+		<link rel="shortcut icon" href="https://s1.gps-server.net/favicon.ico" type="image/x-icon">		
+		<link type="text/css" href="css/jquery-ui.css" rel="Stylesheet">
+        <link type="text/css" href="css/jquery.qtip.css" rel="Stylesheet">
+        <link type="text/css" href="css/ui.jqgrid.css" rel="Stylesheet">
+        <link type="text/css" href="css/jquery.pnotify.default.css" rel="Stylesheet">
+		<link type="text/css" href="css/jquery.multiple.css" rel="Stylesheet">
+		
+		<link type="text/css" href="css/style.css" rel="Stylesheet">
+		<link type="text/css" href="css/style.custom.php" rel="Stylesheet">
+		
+		<link type="text/css" href="css/leaflet.css" rel="Stylesheet">
+		<link type="text/css" href="css/markercluster.css" rel="Stylesheet">
+		<link type="text/css" href="css/leaflet-routing-machine.css" rel="Stylesheet">
+	
+		<script src="js/js"></script>		
+				
+		<script type="text/javascript" src="js/leaflet.js"></script>
+		<script type="text/javascript" src="js/es6-promise.min.js"></script>
+		<script type="text/javascript" src="js/md5.js"></script>
+		<script type="text/javascript" src="js/csv2json.min.js"></script>
+		<script type="text/javascript" src="js/xml2json.min.js"></script>
+		<script type="text/javascript" src="js/sprintf.min.js"></script>
+		<script type="text/javascript" src="js/google.js"></script>
+		<script type="text/javascript" src="js/leaflet.editable.js"></script>
+		<script type="text/javascript" src="js/leaflet.markercluster.js"></script>
+		<script type="text/javascript" src="js/leaflet.polylinedecorator.js"></script>
+		<script type="text/javascript" src="js/leaflet.routingmachine.js"></script>
+		<script type="text/javascript" src="js/marker.rotate.js"></script>
+		<script type="text/javascript" src="js/path.drag.js"></script>
+		<script type="text/javascript" src="js/l.kml.js"></script>
+		<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+		<script type="text/javascript" src="js/jquery-migrate-1.2.1.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="js/jquery.qtip.min.js"></script>
+		<script type="text/javascript" src="js/jquery.jqGrid.locale.js"></script>
+		<script type="text/javascript" src="js/jquery.jqGrid.min.js"></script>
+		<script type="text/javascript" src="js/jquery.pnotify.min.js"></script>
+		<script type="text/javascript" src="js/jquery.generatefile.js"></script>
+		<script type="text/javascript" src="js/jquery.blockUI.js"></script>
+		<script type="text/javascript" src="js/jquery.multiple.js"></script>
+		
+		<script type="text/javascript" src="js/jquery.flot.min.js"></script>
+		<script type="text/javascript" src="js/jquery.flot.crosshair.min.js"></script>
+		<script type="text/javascript" src="js/jquery.flot.navigate.min.js"></script>
+		<script type="text/javascript" src="js/jquery.flot.selection.min.js"></script>
+		<script type="text/javascript" src="js/jquery.flot.time.min.js"></script>
+		<script type="text/javascript" src="js/jquery.flot.resize.min.js"></script>
+		<script type="text/javascript" src="js/jquery.flot.pie.min.js"></script>
+		<script type="text/javascript" src="js/jquery.flot.categories.min.js"></script>
+		<script type="text/javascript" src="js/jscolor.js"></script>
+		<script type="text/javascript" src="js/moment.min.js"></script>	
+		<script type="text/javascript" src="js/push.min.js"></script>
+		<script type="text/javascript" src="js/gs.config.js"></script>
+		<script type="text/javascript" src="js/gs.common.js"></script>
+		<script type="text/javascript" src="js/gs.connect.js"></script>
+        <script type="text/javascript" src="js/gs.main.js"></script>
+        <script type="text/javascript" charset="UTF-8" src="js/common.js"></script>
+        <script type="text/javascript" charset="UTF-8" src="js/util.js"></script></head>
+    
+    <body onload="load()" onunload="unload()" style="direction: rtl;">
+	<input id="load_file" type="file" style="display: none;" onchange="">
+	
+	
+	
+	
+	
+	<div id="content" style="visibility: visible;">
+		<div id="map" style="background-color: khaki">
+		</div>
+
+
+
+<div id="top_panel">
+	<div class="tp-menu left-menu">
+				<div class="about-btn">
+			<a href="test.com" onclick="$(&#39;#dialog_about&#39;).dialog();" title="About">
+				<img src="images/logo_small.svg" border="0">
+			</a>
+		</div>
+						<div class="help-btn">
+			<a href="http://www.docs.gps-server.net/" target="_blank" title="Help">
+				<img src="images/info.svg" border="0">
+			</a>
+		</div>
+				<div class="settings-btn">
+			<a href="test.com" onclick="settingsOpen();" title="Settings">
+				<img src="images/settings.svg" border="0">
+			</a>
+		</div>
+				<div class="dashboard-btn">
+			<a href="test.com" onclick="dashboardOpen();" title="Dashboard">
+				<img src="images/dashboard.svg" border="0">
+			</a>
+		</div>
+				<div class="point-btn">
+			<a href="test.com" onclick="$(&#39;#dialog_show_point&#39;).dialog();" title="Show point">
+				<img src="images/marker.svg" border="0">
+			</a>
+		</div>
+		<div class="search-btn">
+			<a href="#" onclick="$('#dialog_address_search').dialog('open');" title="Address search">
+				<img src="images/search.svg" border="0">
+			</a>
+		</div>
+				<div class="report-btn">
+			<a href="test.com" onclick="reportsOpen();" title="Reports">
+				<img src="images/report.svg" border="0">
+			</a>
+		</div>
+								<div class="tasks-btn">
+			<a href="test.com" onclick="tasksOpen();" title="Tasks">
+				<img src="images/tasks.svg" border="0">
+			</a>
+		</div>
+						<div class="rilogbook-btn">
+			<a href="test.com" onclick="rilogbookOpen();" title="RFID and iButton logbook">
+				<img src="images/logbook.svg" border="0">
+			</a>
+		</div>
+						<div class="dtc-btn">
+			<a href="test.com" onclick="dtcOpen();" title="DTC (Diagnostic Trouble Codes)">
+				<img src="images/dtc.svg" border="0">
+			</a>
+		</div>
+						<div class="maintenance-btn">
+			<a href="test.com" onclick="maintenanceOpen();" title="Maintenance">
+				<img src="images/maintenance.svg" border="0">
+			</a>
+		</div>
+						<div class="expenses-btn">
+			<a href="test.com" onclick="expensesOpen();" title="Expenses">
+				<img src="images/expenses.svg" border="0">
+			</a>
+		</div>
+						<div class="cmd-btn">
+			<a href="test.com" onclick="cmdOpen();" title="Object control">
+				<img src="images/cmd.svg" border="0">
+			</a>
+		</div>
+						<div class="gallery-btn">
+			<a href="test.com" onclick="imgOpen();" title="Image gallery">
+				<img src="images/gallery.svg" border="0">
+			</a>
+		</div>
+						<div class="chat-btn">
+			<a href="test.com" onclick="chatOpen();" title="Chat">
+				<img class="float-left" src="images/chat.svg" border="0">
+				<span id="chat_msg_count">0</span>
+			</a>
+		</div>
+			</div>
+    
+	<div class="tp-menu right-menu">				
+		
+	
+				<div class="user-btn">
+			<a href="test.com" onclick="settingsOpenUser();" title="My account">
+				<img src="images/user.svg" border="0">
+				<span>Admin</span>
+			</a>
+		</div>
+	
+		<div class="logout-btn">
+			<a href="test.com" onclick="connectLogout();" title="Log out">
+				<img src="images/logout.svg" border="0">
+			</a>
+		</div>
+	</div>
+</div>
+
+<div id="side_panel" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+	<ul class="ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all" role="tablist">           
+		<li class="ui-state-default ui-corner-top ui-tabs-active ui-state-active ui-state-focus" role="tab" tabindex="0" aria-controls="side_panel_objects" aria-labelledby="ui-id-47" aria-selected="true" aria-expanded="true"><a href="test.comside_panel_objects" onclick="datalistBottomSwitch(&#39;object&#39;);" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-47">Objects</a></li>
+		<li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="side_panel_events" aria-labelledby="ui-id-48" aria-selected="false" aria-expanded="false"><a href="test.comside_panel_events" onclick="datalistBottomSwitch(&#39;event&#39;);" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-48">Events</a></li>
+		<li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="side_panel_places" aria-labelledby="side_panel_places_tab" aria-selected="false" aria-expanded="false"><a href="test.comside_panel_places" id="side_panel_places_tab" class="ui-tabs-anchor" role="presentation" tabindex="-1">Places</a></li>
+		<li class="ui-state-default ui-corner-top" role="tab" tabindex="-1" aria-controls="side_panel_history" aria-labelledby="ui-id-49" aria-selected="false" aria-expanded="false"><a href="test.comside_panel_history" onclick="datalistBottomSwitch(&#39;route&#39;);" class="ui-tabs-anchor" role="presentation" tabindex="-1" id="ui-id-49">History</a></li>
+	</ul>
+	      
+	<div id="side_panel_objects" aria-labelledby="ui-id-47" class="ui-tabs-panel ui-widget-content ui-corner-bottom" role="tabpanel" aria-hidden="false" style="display: block;">
+		<div id="side_panel_objects_object_list">
+			<div class="ui-jqgrid ui-widget ui-widget-content ui-corner-all" id="gbox_side_panel_objects_object_list_grid" dir="ltr" style="width: 340px;"><div class="ui-widget-overlay jqgrid-overlay" id="lui_side_panel_objects_object_list_grid"></div><div class="loading ui-state-default ui-state-active" id="load_side_panel_objects_object_list_grid" style="display: none;">Loading...</div><div class="ui-jqgrid-view" id="gview_side_panel_objects_object_list_grid" style="width: 340px;"><div class="ui-jqgrid-titlebar ui-jqgrid-caption ui-widget-header ui-corner-top ui-helper-clearfix" style="display: block;"><a role="link" class="ui-jqgrid-titlebar-close ui-corner-all HeaderButton" style="right: 0px; display: none;"><span class="ui-icon ui-icon-circle-triangle-n"></span></a><span class="ui-jqgrid-title"><div class="row4">									<div class="width80">										<input id="side_panel_objects_object_list_search" class="inputbox-search" type="text" value="" placeholder="Search" maxlength="25">									</div>									<div class="float-right">										<a href="test.com" onclick="objectReloadData();">										<div class="panel-button" title="Reload">											<img src="images/refresh-color.svg" width="16px" border="0">										</div>										</a>										<a href="test.com" onclick="settingsObjectAdd();">										<div class="panel-button" title="Add object">											<img src="images/object-add.svg" width="16px" border="0">										</div>										</a>									</div>								</div></span></div>
+
+
+
+
+
+			<div class="ui-state-default ui-jqgrid-hdiv" style="width: 340px;"><div class="ui-jqgrid-hbox"><table class="ui-jqgrid-htable" style="width: 323px;" role="grid" aria-labelledby="gbox_side_panel_objects_object_list_grid" cellspacing="0" cellpadding="0" border="0"><thead><tr class="ui-jqgrid-labels" role="rowheader"><th id="side_panel_objects_object_list_grid_search" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 150px; display: none;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_side_panel_objects_object_list_grid_search" class="ui-jqgrid-sortable"><span class="s-ico" style=""><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th><th id="side_panel_objects_object_list_grid_name_sort" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 150px; display: none;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_side_panel_objects_object_list_grid_name_sort" class="ui-jqgrid-sortable"><span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th><th id="side_panel_objects_object_list_grid_group_id" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 150px; display: none;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_side_panel_objects_object_list_grid_group_id" class="ui-jqgrid-sortable"><span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th><th id="side_panel_objects_object_list_grid_show" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 20px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_side_panel_objects_object_list_grid_show" class="ui-jqgrid-sortable"><a href="test.com" onclick="objectVisibleAllToggle();"><img title="Show/hide all" src="images/eye.svg" width="14px"></a><span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th><th id="side_panel_objects_object_list_grid_follow" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 20px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_side_panel_objects_object_list_grid_follow" class="ui-jqgrid-sortable"><a href="test.com" onclick="objectFollowAllToggle();"><img title="Follow/unfollow all" src="images/follow.svg" width="14px"></a><span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th><th id="side_panel_objects_object_list_grid_icon" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 28px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_side_panel_objects_object_list_grid_icon" class="ui-jqgrid-sortable"><span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th><th id="side_panel_objects_object_list_grid_name" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 215px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_side_panel_objects_object_list_grid_name" class="ui-jqgrid-sortable">Object<span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th><th id="side_panel_objects_object_list_grid_menu" role="columnheader" class="ui-state-default ui-th-column ui-th-ltr" style="width: 15px;"><span class="ui-jqgrid-resize ui-jqgrid-resize-ltr" style="cursor: col-resize;">&nbsp;</span><div id="jqgh_side_panel_objects_object_list_grid_menu" class="ui-jqgrid-sortable"><span class="s-ico" style="display:none"><span sort="asc" class="ui-grid-ico-sort ui-icon-asc ui-state-disabled ui-icon ui-icon-triangle-1-n ui-sort-ltr"></span><span sort="desc" class="ui-grid-ico-sort ui-icon-desc ui-state-disabled ui-icon ui-icon-triangle-1-s ui-sort-ltr"></span></span></div></th></tr></thead></table></div></div><div class="ui-jqgrid-bdiv" style="height: 160px; width: 340px;"><div style="position:relative;"><div></div><table id="side_panel_objects_object_list_grid" tabindex="0" cellspacing="0" cellpadding="0" border="0" role="grid" aria-multiselectable="false" aria-labelledby="gbox_side_panel_objects_object_list_grid" class="ui-jqgrid-btable" style="width: 323px;"><tbody><tr class="jqgfirstrow" role="row" style="height:auto"><td role="gridcell" style="height:0px;width:150px;display:none;"></td><td role="gridcell" style="height:0px;width:150px;display:none;"></td><td role="gridcell" style="height: 0px; width: 150px; display: none;"></td><td role="gridcell" style="height:0px;width:20px;"></td><td role="gridcell" style="height:0px;width:20px;"></td><td role="gridcell" style="height:0px;width:28px;"></td><td role="gridcell" style="height:0px;width:215px;"></td><td role="gridcell" style="height:0px;width:15px;"></td></tr><tr id="side_panel_objects_object_list_gridghead_0_0" role="row" class="ui-widget-content jqgroup ui-row-ltr side_panel_objects_object_list_gridghead_0"><td style="padding-left:0px;" colspan="8"><span style="cursor:pointer;" class="ui-icon ui-icon-circlesmall-minus tree-wrap-ltr" onclick="jQuery().jqGrid(&#39;groupingToggle&#39;,&#39;side_panel_objects_object_list_gridghead_0_0&#39;);return false;"></span><div style="float: left; margin-top: 2px; width: 25px;"><center><input id="object_group_visible_0" type="checkbox" onclick="objectGroupVisibleToggle(0);"></center></div><div style="float: left; margin-top: 2px; width: 25px;"><center><input id="object_group_follow_0" type="checkbox" onclick="objectGroupFollowToggle(0);"></center></div><div style="float: right;"><span id="object_group_name_0">Ungrouped</span> (3)</div></td></tr><tr role="row" id="222222222222222" tabindex="-1" class="ui-widget-content jqgrow ui-row-ltr"><td role="gridcell" style="display:none;" title="bus222222222222222" aria-describedby="side_panel_objects_object_list_grid_search">bus222222222222222</td><td role="gridcell" style="display:none;" title="bus" aria-describedby="side_panel_objects_object_list_grid_name_sort">bus</td><td role="gridcell" style="display:none;" title="0" aria-describedby="side_panel_objects_object_list_grid_group_id">0</td><td role="gridcell" style="text-align:center;" title="" aria-describedby="side_panel_objects_object_list_grid_show"><input id="object_visible_222222222222222" onclick="objectVisibleToggle();" class="checkbox" type="checkbox"></td><td role="gridcell" style="text-align:center;" title="" aria-describedby="side_panel_objects_object_list_grid_follow"><input id="object_follow_222222222222222" onclick="objectFollowToggle();" class="checkbox" type="checkbox"></td><td role="gridcell" style="" title="" aria-describedby="side_panel_objects_object_list_grid_icon"><a href="test.com"><img src="images/land-bus-1.svg" style="width: 26px;"></a></td><td role="gridcell" style="" aria-describedby="side_panel_objects_object_list_grid_name"><div class="object-list-item"><div class="left"><div class="name">Bus</div><div class="status" id="object_status_222222222222222">2020-05-14 18:40:19</div></div><div class="right"><div class="speed" id="object_speed_222222222222222">21 kph</div><div class="engine" id="object_engine_222222222222222"><img src="images/engine-on.svg" style="width: 16px;" title="Engine on"></div><div class="connection" id="object_connection_222222222222222"><img src="images/connection-gsm-gps.svg" style="width: 16px;" title="Connection: Yes, GPS: Yes"></div></div></div></td><td role="gridcell" style="text-align:center;" title="" aria-describedby="side_panel_objects_object_list_grid_menu"><div class="object-action-menu" id="object_action_menu_222222222222222" tag="222222222222222"><a href="test.com"><img src="images/menu.svg" style="width: 4px;" title="Action"></a></div></td></tr><tr role="row" id="111111111111111" tabindex="-1" class="ui-widget-content jqgrow ui-row-ltr"><td role="gridcell" style="display:none;" title="car111111111111111" aria-describedby="side_panel_objects_object_list_grid_search">car111111111111111</td><td role="gridcell" style="display:none;" title="car" aria-describedby="side_panel_objects_object_list_grid_name_sort">car</td><td role="gridcell" style="display:none;" title="0" aria-describedby="side_panel_objects_object_list_grid_group_id">0</td><td role="gridcell" style="text-align:center;" title="" aria-describedby="side_panel_objects_object_list_grid_show"><input id="object_visible_111111111111111" onclick="objectVisibleToggle();" class="checkbox" type="checkbox"></td><td role="gridcell" style="text-align:center;" title="" aria-describedby="side_panel_objects_object_list_grid_follow"><input id="object_follow_111111111111111" onclick="objectFollowToggle();" class="checkbox" type="checkbox"></td><td role="gridcell" style="" title="" aria-describedby="side_panel_objects_object_list_grid_icon"><a href="test.com"><img src="images/land-car-1.svg" style="width: 26px;"></a></td><td role="gridcell" style="" aria-describedby="side_panel_objects_object_list_grid_name"><div class="object-list-item"><div class="left"><div class="name">Car</div><div class="status" id="object_status_111111111111111">2020-05-14 18:40:28</div></div><div class="right"><div class="speed" id="object_speed_111111111111111">113 kph</div><div class="engine" id="object_engine_111111111111111"><img src="images/engine-on.svg" style="width: 16px;" title="Engine on"></div><div class="connection" id="object_connection_111111111111111"><img src="images/connection-gsm-gps.svg" style="width: 16px;" title="Connection: Yes, GPS: Yes"></div></div></div></td><td role="gridcell" style="text-align:center;" title="" aria-describedby="side_panel_objects_object_list_grid_menu"><div class="object-action-menu" id="object_action_menu_111111111111111" tag="111111111111111"><a href="test.com"><img src="images/menu.svg" style="width: 4px;" title="Action"></a></div></td></tr><tr role="row" id="333333333333333" tabindex="-1" class="ui-widget-content jqgrow ui-row-ltr"><td role="gridcell" style="display:none;" title="truck333333333333333" aria-describedby="side_panel_objects_object_list_grid_search">truck333333333333333</td><td role="gridcell" style="display:none;" title="truck" aria-describedby="side_panel_objects_object_list_grid_name_sort">truck</td><td role="gridcell" style="display:none;" title="0" aria-describedby="side_panel_objects_object_list_grid_group_id">0</td><td role="gridcell" style="text-align:center;" title="" aria-describedby="side_panel_objects_object_list_grid_show"><input id="object_visible_333333333333333" onclick="objectVisibleToggle(&#39;333333333333333&#39;);" class="checkbox" type="checkbox"></td><td role="gridcell" style="text-align:center;" title="" aria-describedby="side_panel_objects_object_list_grid_follow"><input id="object_follow_333333333333333" onclick="objectFollowToggle(&#39;333333333333333&#39;);" class="checkbox" type="checkbox"></td><td role="gridcell" style="" title="" aria-describedby="side_panel_objects_object_list_grid_icon"><a href="test.com"><img src="images/land-truck.svg" style="width: 26px;"></a></td><td role="gridcell" style="" aria-describedby="side_panel_objects_object_list_grid_name"><div class="object-list-item"><div class="left"><div class="name">Truck</div><div class="status" id="object_status_333333333333333">2020-05-14 18:40:24</div></div><div class="right"><div class="speed" id="object_speed_333333333333333">61 kph</div><div class="engine" id="object_engine_333333333333333"><img src="images/engine-on.svg" style="width: 16px;" title="Engine on"></div><div class="connection" id="object_connection_333333333333333"><img src="images/connection-gsm-gps.svg" style="width: 16px;" title="Connection: Yes, GPS: Yes"></div></div></div></td><td role="gridcell" style="text-align:center;" title="" aria-describedby="side_panel_objects_object_list_grid_menu"><div class="object-action-menu" id="object_action_menu_333333333333333" tag="333333333333333"><a href="test.com"><img src="images/menu.svg" style="width: 4px;" title="Action"></a></div></td></tr></tbody></table></div></div></div><div class="ui-jqgrid-resize-mark" id="rs_mside_panel_objects_object_list_grid">&nbsp;</div></div>
+		</div>
+		<div id="side_panel_objects_dragbar" style="display: none;">
+		</div>
+	</div>
+	
+	
+</div></div></body></html>
